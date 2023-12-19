@@ -10,4 +10,5 @@ RUN npm run build:ssr
 FROM node:20.10-alpine as serve
 COPY --from=build /app/dist/giftify /app
 EXPOSE 4080
+ENV PORT=4080
 CMD ["node", "/app/server/server.mjs"]
