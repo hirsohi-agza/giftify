@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductItemComponent } from './product-item.component';
+import { Product } from '../../../models/product';
 
 describe('ProductItemComponent', () => {
   let component: ProductItemComponent;
@@ -13,13 +14,7 @@ describe('ProductItemComponent', () => {
     // FIXME: WRITE DUMMY OBJECT FOR TEST AND WHAT HAPPENS IF image URL Null??
     fixture = TestBed.createComponent(ProductItemComponent);
     component = fixture.componentInstance;
-    component.product = {
-      price: 0,
-      name: 'hello world',
-      imageUrl: 'url',
-      id: '0',
-      description: 'bla bla bla',
-    };
+    component.product = getProduct();
     fixture.detectChanges();
   });
 
@@ -27,3 +22,13 @@ describe('ProductItemComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+function getProduct(): Product {
+  return {
+    id: '1',
+    name: 'Produkt 1',
+    price: 19.99,
+    description: 'Dies ist Produkt 1',
+    imageUrl: 'bild1.jpg',
+  };
+}
