@@ -1,0 +1,6 @@
+<ng-container *ngIf="products$ | async as products">
+  <gift-product-item
+    [product]="product"
+    *ngFor="let product of products"
+  ></gift-product-item>
+</ng-container>
