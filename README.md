@@ -17,6 +17,5 @@
 * you need a token
 
 ```bash
-docker login docker.pkg.github.com
-# follow the next steps
+docker run -d -p 5000:5000 -e PORT=5000 heroshiagasa/giftify:latest
 ```
