@@ -8,12 +8,18 @@ describe('ProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [ProductItemComponent],
+    }).compileComponents();
+    // FIXME: WRITE DUMMY OBJECT FOR TEST AND WHAT HAPPENS IF image URL Null??
     fixture = TestBed.createComponent(ProductItemComponent);
     component = fixture.componentInstance;
+    component.product = {
+      price: 0,
+      name: 'hello world',
+      imageUrl: 'url',
+      id: '0',
+      description: 'bla bla bla',
+    };
     fixture.detectChanges();
   });
 
