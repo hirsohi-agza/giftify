@@ -1,6 +1,9 @@
-<ng-container *ngIf="products$ | async as products">
+<div
+  class="gift-product-list-container"
+  [class.isSmartphoneScreen]="isSmartphoneScreen"
+>
   <gift-product-item
     [product]="product"
-    *ngFor="let product of products"
+    *ngFor="let product of products$ | async"
   ></gift-product-item>
-</ng-container>
+</div>
