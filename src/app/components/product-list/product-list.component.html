@@ -1,9 +1,10 @@
 <div
   class="gift-product-list-container"
   [class.isSmartphoneScreen]="isSmartphoneScreen"
+  *ngIf="products$ | async as products"
 >
   <gift-product-item
+    *ngFor="let product of products"
     [product]="product"
-    *ngFor="let product of products$ | async"
   ></gift-product-item>
 </div>
