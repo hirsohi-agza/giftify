@@ -9,6 +9,12 @@ RUN npm run build:ssr
 # Stage 2: Serve the application
 FROM node:20.10-alpine as serve
 COPY --from=build /app/dist/giftify /app
-EXPOSE 4080
-ENV PORT=4080
+
+# Set default port
+ENV PORT=4000
+
+# Expose the port dynamically
+EXPOSE $PORT
+
+# Start the application
 CMD ["node", "/app/server/server.mjs"]
